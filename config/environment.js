@@ -1,11 +1,15 @@
 'use strict';
 
+const shouldAutoBoot = process.env.DISABLE_AUTOBOOT !== 'true'
+console.warn(`shouldAutoBoot: ${shouldAutoBoot}`);
+
 module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'ember-example-visit-api',
     environment,
     rootURL: '/',
     locationType: 'auto',
+    shouldAutoBoot,
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -26,8 +30,8 @@ module.exports = function(environment) {
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
-    // ENV.APP.LOG_TRANSITIONS = true;
-    // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
+    ENV.APP.LOG_TRANSITIONS = true;
+    ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
   }
 
