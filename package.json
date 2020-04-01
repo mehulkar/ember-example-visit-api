@@ -15,6 +15,7 @@
     "lint:hbs": "ember-template-lint .",
     "lint:js": "eslint .",
     "start": "ember serve",
+    "start:manual": "DISABLE_AUTOBOOT=true ember serve",
     "test": "ember test"
   },
   "devDependencies": {
