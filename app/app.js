@@ -4,9 +4,9 @@ import loadInitializers from 'ember-load-initializers';
 import config from './config/environment';
 
 let autoboot = false;
-if (config.shouldAutoBoot) {
-  autoboot
-}
+
+console.warn(`shouldAutoBoot: ${autoboot}`);
+
 const App = Application.extend({
   modulePrefix: config.modulePrefix,
   podModulePrefix: config.podModulePrefix,
